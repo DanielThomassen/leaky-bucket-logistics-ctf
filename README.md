@@ -14,12 +14,13 @@ then starts the CTF:
 ./run.sh
 ```
 
-The first run can take a few minutes while Docker downloads the image.
+The first run can take a few minutes while Docker downloads the image. The
+launcher stays attached to the CTF output; press `Ctrl+C` to stop the stack.
 
 To start without checking for updates:
 
 ```shell
-docker compose up -d
+docker compose up
 ```
 
 Then open <http://localhost:8081/> and start with Challenge 1. The public API
@@ -28,6 +29,9 @@ is at <http://localhost:8080/>.
 The container image is public and is pulled automatically on first start.
 
 ## Stop the challenge
+
+When the launcher is open, press `Ctrl+C`. If the stack was started in the
+background, run:
 
 ```shell
 docker compose down
