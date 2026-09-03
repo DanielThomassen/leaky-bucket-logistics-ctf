@@ -1,0 +1,39 @@
+name: leaky-bucket-logistics-ctf
+
+services:
+  public-api:
+    image: "ghcr.io/danielthomassen/leaky-bucket-logistics-ctf:1.0.0"
+    pull_policy: missing
+    ports:
+      - "${PUBLIC_API_PORT:-8080}:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ACME_SERVICE_ROLE: public
+    networks:
+      - challenge-edge
+      - challenge-internal
+
+  admin-api:
+    image: "ghcr.io/danielthomassen/leaky-bucket-logistics-ctf:1.0.0"
+    pull_policy: missing
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ACME_SERVICE_ROLE: admin
+    networks:
+      - challenge-internal
+
+  briefings:
+    image: "ghcr.io/danielthomassen/leaky-bucket-logistics-ctf:1.0.0"
+    pull_policy: missing
+    ports:
+      - "${BRIEFING_PORT:-8081}:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ACME_SERVICE_ROLE: briefings
+    networks:
+      - challenge-edge
+
+networks:
+  challenge-edge:
+  challenge-internal:
+    internal: true
