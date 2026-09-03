@@ -1,6 +1,22 @@
 # Leaky Bucket Logistics CTF
 
-## Start the challenge
+## Start or update the challenge
+
+If you cloned this repository before a workshop update, use the launcher for
+your operating system. It obtains the latest launcher configuration and image,
+then starts the CTF:
+
+```powershell
+.\run.ps1
+```
+
+```sh
+./run.sh
+```
+
+The first run can take a few minutes while Docker downloads the image.
+
+To start without checking for updates:
 
 ```shell
 docker compose up -d
