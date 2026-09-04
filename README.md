@@ -50,3 +50,22 @@ docker compose down
 - A running [Docker Engine](https://docs.docker.com/engine/) compatible runtime
   with Docker Compose v2 (for example Docker Desktop or Docker Engine with the
   Compose plugin).
+
+### Windows
+
+Install and start Docker Desktop, configured to use Linux containers. Open
+PowerShell and confirm Docker Compose is available:
+
+```powershell
+docker compose version
+```
+
+### Linux
+
+Install Docker Engine and the Docker Compose plugin using your distribution's
+Docker installation guidance. Start the Docker service and ensure your user can
+run Docker commands, then confirm Docker Compose is available:
+
+```sh
+docker compose version
+```
