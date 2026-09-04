@@ -44,3 +44,9 @@ docker compose down
   machine.
 - Do not brute-force paths, credentials, endpoints, or tokens.
 - Work with your team and keep useful findings for the next briefing.
+
+## Requirements
+
+- A running [Docker Engine](https://docs.docker.com/engine/) compatible runtime
+  with Docker Compose v2 (for example Docker Desktop or Docker Engine with the
+  Compose plugin).
